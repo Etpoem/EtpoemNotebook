@@ -1,6 +1,8 @@
 ## 1. docker 内开启 ssh 服务，使用 vscode 进行远程开发
 ~~~bash
 docker exec -it ${contain_name} bash
+# 生成 root 密码， 用于登陆使用
+passwd 
 sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 apt update -y 
