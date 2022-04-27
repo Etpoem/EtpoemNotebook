@@ -6,8 +6,8 @@
 如果上诉目录已存在相应文件则不用再次生成密钥对，ssh-keygen 命令详解可使用 ssh-keygen --help 查看
 
 (2). 将公钥上传到远程机器
-将 id_ras.pub 上传到远程机器的 ~/.ssh 目录下，若该目录不存在则创建之
+将 id_ras.pub 上传到远程机器的 ~/.ssh 目录下，若该目录不存在则创建之，然后执行以下命令
 cat id_rsa.pub >> authorized_keys
 上诉命令会将 id_ras.pub 的内容追加到 authorized_keys
-之后便可以吧 id_ras.pub 删掉
+之后便可以把 id_ras.pub 删掉
 ~~~
