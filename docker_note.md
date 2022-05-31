@@ -6,7 +6,8 @@ passwd
 sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 apt update -y 
-apt install -y --no-install-recommends vim openssh-server
+# vim 用于修改配置， wget 用于远程登陆时下载 vscode
+apt install -y --no-install-recommends vim openssh-server wget
 
 vi /etc/ssh/sshd_config
 # 修改 sshd server 的配置
