@@ -18,3 +18,11 @@ mkdir -p /var/run/sshd
 /usr/sbin/sshd -D &
 
 ~~~
+
+## 2. ssh 连接到 docker 内，环境变量发生变化的解决方法
+现象： 使用 ssh 连接到 docker 相比 使用 docker exec 进入容器少了一些环境变量    
+解决方案： ssh连接后，会自动执行source /etc/profile，在该文件添加相应命令，从1号进程获取容器本身的环境变量     
+将以下命令添加到 /etc/profile 文件后   
+~~~
+export $(cat /proc/1/environ |tr '\0' '\n' | xargs)
+~~~
