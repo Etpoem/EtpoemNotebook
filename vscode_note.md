@@ -13,7 +13,6 @@ cat id_rsa.pub >> authorized_keys
 ~~~
 
 ## 2. vscode 远程开发环境变量配置
-~~~bash
 （1). VSCode Remote 登陆远程服务器时，使用的是 Interactive login 方式，这种方式会加载 /etc/profile, ~/.bash_profile, ~/.bash_login, ~/.profile 而不会加载 ~/.bashrc, 所以想要 VSCode 获取正确的环境变量， 要把环境变量写入 /etc/profile, ~/.bash_profile, ~/.bash_login, ~/.profile 之一。
 （2). VSCode Remote的环境变量加载是在第一次远程服务器启动 Remote Server 时， 所以更改环境变量想要生效必须重启远程 Server, vscode 上键入 Ctrl + Shift + p ，然后搜索 Remote-SHH: Kill VSCode Server on host... 然后重新加载 vscode
-~~~
+
